@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "../lib/utils";
 import Logo from "./MoE_logo.png";
+import Provider from "@/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,8 +30,11 @@ export default function RootLayout({
           inter.className
         )}
       >
-
+        <Provider >
         {children}
+
+        </Provider>
+
       </body>
     </html>
   );

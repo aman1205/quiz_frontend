@@ -92,6 +92,14 @@ const AdminLogin: React.FC = () => {
                 Forgot password?
               </Link>
             </div>
+            <div className="flex items-center justify-center">
+              <Link
+                href="/admin/register"
+                className="text-sm text-primary hover:text-primary/80 text-center"
+              >
+                Don't have an account? Sign up
+              </Link>
+            </div>
           </div>
         </CardContent>
         <CardFooter>

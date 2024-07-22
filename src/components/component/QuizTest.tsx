@@ -10,9 +10,6 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
-// import { prompt } from "react-router";
-// import { Prompt } from 'react-router';
-
 interface Question {
   id: number;
   question: string;
@@ -44,10 +41,11 @@ const questions: Question[] = [
   },
   // Add more questions with categories...
 ];
+type QuizPageProps = {
+    onComplete: () => void;
+  };
 
-const QuizPage: React.FC = () => {
-  const router = useRouter();
-
+const QuizPage: React.FC<QuizPageProps> = ({onComplete}) => {
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
   const [answers, setAnswers] = useState<{ [key: number]: string }>({});
   const [timeLeft, setTimeLeft] = useState<number>(51 * 60); // 40 minutes in seconds
@@ -88,7 +86,7 @@ const QuizPage: React.FC = () => {
   const handleSubmitQuiz = () => {
     // Submit quiz logic
     console.log("Quiz submitted:", answers);
-    router.push("/quizzes/thanks", { scroll: false });
+    onComplete();
     document.exitFullscreen();
   };
 

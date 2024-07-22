@@ -17,13 +17,18 @@ import { HiEye, HiEyeOff } from "react-icons/hi";
 import { FcGoogle } from "react-icons/fc";
 import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
+import {signIn} from "next-auth/react";
+import { useSession } from "next-auth/react";
+
 
 const loginSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }).min(5).max(255),
-  password: z.string().min(8).max(50),
+  password: z.string().min(2).max(50),
 });
 
 function Login() {
+  const { data: session } = useSession();
+
   const [showPassword, setShowPassword] = useState(false);
 
   const form = useForm<z.infer<typeof loginSchema>>({
@@ -33,14 +38,21 @@ function Login() {
       password: "",
     },
   });
-
+  console
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
-  const onSubmit = (values: z.infer<typeof loginSchema>) => {
+  const onSubmit = async(values: z.infer<typeof loginSchema>) => {
     console.log(values);
-    form.reset();
+    const  result = await signIn("credentials", {
+      email: values.email,
+      password: values.password,
+      redirect: true,
+      callbackUrl: "/quizzes/startquiz",
+    });
+    console.log("Result", result);
+    // form.reset();
   };
 
   return (

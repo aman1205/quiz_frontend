@@ -9,12 +9,12 @@ import Team from "@/components/component/Team";
 import Footer from "@/components/component/Footer";
 import Quiz from "@/components/component/Quiz";
 import { Button } from "@/components/ui/button";
-import {  XIcon } from "lucide-react";
+import { XIcon } from "lucide-react";
+import axios from "axios";
 
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-
 
   const toggleMenu = () => {
     if (!isAnimating) {
@@ -25,6 +25,8 @@ export default function Component() {
       }, 300); // 300ms delay to prevent rapid toggling
     }
   };
+  axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
+  axios.defaults.withCredentials = true;
   return (
     <div className="flex flex-col min-h-[100vh] xl:w-full">
       <header className="fixed top-0 left-0 z-10 w-full bg-gray-900 px-4 py-3 text-white shadow-md dark:bg-gray-800 md:px-6 lg:px-8 ">
@@ -35,7 +37,9 @@ export default function Component() {
           </Link>
           <nav
             className={`${
-              isMenuOpen ? "flex flex-col text-center gap-1  duration-150" : "hidden"
+              isMenuOpen
+                ? "flex flex-col text-center gap-1  duration-150"
+                : "hidden"
             } absolute top-full left-0 w-full bg-white text-black p-4 md:relative md:top-0 md:left-auto md:flex md:w-auto md:flex-row md:bg-transparent md:text-white md:p-0 md:space-x-4`}
           >
             <Link
