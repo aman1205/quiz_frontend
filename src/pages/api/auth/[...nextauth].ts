@@ -6,34 +6,29 @@ export default NextAuth({
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "email", placeholder: "you@example.com" },
+        email: {
+          label: "Email",
+          type: "email",
+          placeholder: "you@example.com",
+        },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
         try {
-          console.log("Authorize function called with credentials:", credentials);
-
-          // const res = await fetch("http://localhost:8000/api/auth/login", {
-          //   method: "POST",
-          //   headers: {
-          //     "Content-Type": "application/json",
-          //   },
-          //   body: JSON.stringify({
-          //     email: credentials?.email,
-          //     password: credentials?.password,
-          //   }),
-          // });
-          const res = await axios.post("http://localhost:8000/api/auth/login", {
-            email: credentials?.email,
-            password: credentials?.password,
-          }, {withCredentials: true});
+          const res = await axios.post(
+            "http://localhost:8000/api/auth/login",
+            {
+              email: credentials?.email,
+              password: credentials?.password,
+            },
+            { withCredentials: true }
+          );
 
           console.log("Response status:", res.status);
 
           if (!(res.status === 201)) {
             const errorDetails = await res.data.message;
             console.error("Login failed:", errorDetails);
-            // throw new Error(errorDetails.message || "Login failed");
           }
 
           const user = await res.data;
@@ -44,9 +39,11 @@ export default NextAuth({
           } else {
             return null;
           }
-        } catch (error) {
-          console.error("Authorize error:", error);
-          throw new Error("Invalid email or password");
+        } catch (err:any) {
+          if (err.response) {
+            console.error("Login failed:", err.response.data.message);
+            throw new Error(err.response.data.message);
+          }
         }
       },
     }),
@@ -70,5 +67,4 @@ export default NextAuth({
     strategy: "jwt",
   },
   secret: process.env.NEXTAUTH_SECRET,
-
 });

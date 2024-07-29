@@ -1,7 +1,18 @@
 'use client';
+import { useRouter } from 'next/navigation'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useState } from "react";
+import { HiEye, HiEyeOff } from "react-icons/hi";
+import { FcGoogle } from "react-icons/fc";
+import { GoArrowUpRight } from "react-icons/go";
+import Link from "next/link";
+import {signIn} from "next-auth/react";
+import { useSession } from "next-auth/react";
+import toast, { Toaster } from 'react-hot-toast';
+
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -11,14 +22,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { useState } from "react";
-import { HiEye, HiEyeOff } from "react-icons/hi";
-import { FcGoogle } from "react-icons/fc";
-import { GoArrowUpRight } from "react-icons/go";
-import Link from "next/link";
-import {signIn} from "next-auth/react";
-import { useSession } from "next-auth/react";
 
 
 const loginSchema = z.object({
@@ -27,8 +30,7 @@ const loginSchema = z.object({
 });
 
 function Login() {
-  const { data: session } = useSession();
-
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
 
   const form = useForm<z.infer<typeof loginSchema>>({
@@ -48,15 +50,26 @@ function Login() {
     const  result = await signIn("credentials", {
       email: values.email,
       password: values.password,
-      redirect: true,
-      callbackUrl: "/quizzes/startquiz",
+      redirect:false,
     });
-    console.log("Result", result);
+    if (result && result.error) {
+        if(result.error === "Invalid email"){
+           form.setError("email", {message: "Invalid email address"});
+        }else{
+            form.setError("password", {message: "Invalid password"});
+        }
+    }
+    if(result && result.ok){
+      toast.success("Login Successfull");
+      router.push("/quizzes");
+    }
+
     // form.reset();
   };
 
   return (
     <div className="min-h-screen flex flex-col justify-center sm:py-12">
+       <Toaster />
       {/* <h1 className="font-bold  text-2xl ml-4">Invooce</h1> */}
       <div className="p-10 xs:p-0 mx-auto md:w-full md:max-w-lg">
         <div className="bg-white  w-full rounded-lg">
@@ -73,7 +86,7 @@ function Login() {
               <span className="absolute inset-x-0 top-2 text-center text-gray-500 bg-white px-2">
                 or Login with Email
               </span>
-              <div className="border-t border-gray-300"></div>
+              <div className="border-t border-gray-300"/>
             </div>
             <Form {...form}>
               <form
@@ -141,7 +154,7 @@ function Login() {
                   </div>
                   <div className="text-sm">
                     <a
-                      href="#"
+                      href="/forgot-password"
                       className="font-medium text-[#4741F6] hover:text-blue-500"
                     >
                       Forgot Password?
