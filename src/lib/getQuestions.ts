@@ -1,4 +1,3 @@
-// lib/getQuestions.ts
 import axios from "axios";
 
 export interface Option {

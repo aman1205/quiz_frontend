@@ -9,7 +9,6 @@ import { FcGoogle } from "react-icons/fc";
 import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
 import {signIn} from "next-auth/react";
-import { useSession } from "next-auth/react";
 import toast, { Toaster } from 'react-hot-toast';
 
 import { Input } from "@/components/ui/input";
@@ -63,7 +62,6 @@ function Login() {
       toast.success("Login Successfull");
       router.push("/quizzes");
     }
-
     // form.reset();
   };
 

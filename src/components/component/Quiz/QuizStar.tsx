@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 type HomePageProps = {
   onStart: () => void;
@@ -16,14 +16,7 @@ const HomePage: React.FC<HomePageProps> = ({ onStart }) => {
         <p className="text-gray-500 dark:text-gray-400 text-xl">
           Test your knowledge with our engaging quiz!
         </p>
-        <div className="mt-8">
-          <Button
-            onClick={onStart}
-            className="inline-flex items-center justify-center px-8 py-3 rounded-md bg-gray-900 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-          >
-            Start Quiz
-          </Button>
-        </div>
+       
       </div>
       <div className="mt-16 max-w-3xl space-y-8">
         <section className="text-center">
@@ -56,6 +49,14 @@ const HomePage: React.FC<HomePageProps> = ({ onStart }) => {
           </p>
         </section>
       </div>
+      <div className="mt-8">
+          <Button
+            onClick={onStart}
+            className="inline-flex items-center justify-center px-8 py-3 rounded-md bg-gray-900 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+          >
+            Start Quiz
+          </Button>
+        </div>
     </section>
   );
 };

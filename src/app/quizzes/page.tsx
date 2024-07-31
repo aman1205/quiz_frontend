@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import StartQuiz from "@/components/component/QuizStar";
-import Quiz from "@/components/component/QuizTest";
-import Instruction from "@/components/component/Instruction";
-import Thanks from "@/components/component/Thanks";
+import StartQuiz from "@/components/component/Quiz/QuizStar";
+import Quiz from "@/components/component/Quiz/QuizTest";
+import Instruction from "@/components/component/Quiz/Instruction";
+import Thanks from "@/components/component/Quiz/Thanks";
 
 const QuizzesPage: React.FC = () => {
   const [phase, setPhase] = useState<

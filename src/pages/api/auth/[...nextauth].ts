@@ -30,7 +30,6 @@ export default NextAuth({
             const errorDetails = await res.data.message;
             console.error("Login failed:", errorDetails);
           }
-
           const user = await res.data;
           console.log("User data received:", user);
 
