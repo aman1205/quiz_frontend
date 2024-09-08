@@ -45,7 +45,6 @@ function Login() {
   };
 
   const onSubmit = async(values: z.infer<typeof loginSchema>) => {
-    console.log(values);
     const  result = await signIn("credentials", {
       email: values.email,
       password: values.password,
@@ -53,8 +52,10 @@ function Login() {
     });
     if (result && result.error) {
         if(result.error === "Invalid email"){
+            toast.error("Invalid email address");
            form.setError("email", {message: "Invalid email address"});
         }else{
+            toast.error("Invalid password");
             form.setError("password", {message: "Invalid password"});
         }
     }
@@ -64,6 +65,27 @@ function Login() {
     }
     // form.reset();
   };
+
+  const handleGoogleLogin = async () => {
+    const result = await signIn("google", { redirect: false }); // Set redirect to false to handle the response manually.
+  
+    if (result?.error) {
+      // Show a toast error if login fails due to an invalid email
+      if (result.error.includes("AccessDenied")) {
+        toast.error("Please use your AKGEC email to sign in.");
+      } else {
+        toast.error("Google login failed. Please try again.");
+      }
+      return; // Cancel the login flow
+    }
+  
+    if (result?.ok) {
+      toast.success("Login Successful");
+      router.push("/quizzes"); // Redirect to quizzes page on success
+    }
+  };
+  
+
 
   return (
     <div className="min-h-screen flex flex-col justify-center sm:py-12">
@@ -76,7 +98,7 @@ function Login() {
             <p className="font-semibold text-gray-600 mb-3">
               Hi, Welcome back 👋
             </p>
-            <Button className="w-full bg-white border border-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg mb-5 hover:bg-blue-300">
+            <Button className="w-full bg-white border border-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg mb-5 hover:bg-blue-300" onClick={handleGoogleLogin}>
               <FcGoogle className="inline-block w-5 h-5 mr-2" /> Login with
               Google
             </Button>

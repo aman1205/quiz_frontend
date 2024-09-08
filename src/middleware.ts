@@ -3,12 +3,10 @@ import type { NextRequest } from "next/server";
 import { getToken } from "next-auth/jwt";
 
 interface UserToken {
-  user: {
-    id: string;
-    name: string;
-    email: string;
-    Role: "ADMIN" | "USER";
-  };
+  id: string;
+  name: string;
+  email: string;
+  role: "ADMIN" | "USER";
   accessToken: string;
   iat: number;
   exp: number;
@@ -30,7 +28,7 @@ export default async function middleware(request: NextRequest) {
     pathname.startsWith(route)
   );
   const isAuthRoute = AUTH_ROUTES.includes(pathname);
-  const userRole = token?.user.Role;
+  const userRole = token?.role;
 
   console.log("Token:", token);
 
