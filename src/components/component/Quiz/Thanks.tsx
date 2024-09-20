@@ -9,8 +9,8 @@ export default function page() {
   const baseUrl=process.env.NEXT_PUBLIC_API_URL
   const handleLogout=async()=>{
     try {
-      const response= await axios.post(`${baseUrl}/auth/logout` , {} , {withCredentials:true});
-      if(response.status==200){
+      // const response= await axios.post(`${baseUrl}/auth/logout` , {} , {withCredentials:true});
+      // if(response.status==200){
         const result = await signOut({
             redirect:true,
             callbackUrl:'/'
@@ -18,7 +18,7 @@ export default function page() {
           if(result){
               alert('Logout Done');
           }
-      }
+      // }
   
     } catch (error:any) {
         console.log("Error" , error.message) ;

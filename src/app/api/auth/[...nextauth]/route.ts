@@ -22,18 +22,14 @@ const handler = NextAuth({
             },
             { withCredentials: true }
           );
-
-          console.log("Response status:", res.status);
-
-          if (res.status !== 201) {
+          console.log("Response status:", res.data.statusCode);
+          if (res.data.statusCode !== 201) {
             const errorDetails = await res.data.message;
             console.error("Login failed:", errorDetails);
-            return null; // Fail the authorization if status is not 201
+            return null; 
           }
-
-          const user = await res.data;
+          const user = await res.data.data;
           console.log("User data received:", user);
-
           return user || null;
         } catch (err: any) {
           if (err.response) {
@@ -41,34 +37,36 @@ const handler = NextAuth({
             throw new Error(err.response.data.message);
           }
           console.error("Authorization error:", err);
-          return null; // Fail authorization on unexpected errors
+          return null;
         }
       },
     }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-      profile(profile) {
-        // Map the sub field to id as NextAuth requires an id
-        return {
-          id: profile.sub, // Ensure id is properly set
-          name: profile.name,
-          email: profile.email,
-          image: profile.picture,
-          role: profile.role ?? "user",
-        };
-      },
+      // profile(profile) {
+      //   return {
+      //     id: profile.sub,
+      //     name: profile.name,
+      //     email: profile.email,
+      //     image: profile.picture,
+      //     role: profile.role ?? "user",
+      //   };
+      // },
     }),
   ],
   callbacks: {
     async signIn({ account, profile }: any) {
       if (account.provider === "google") {
+        // && profile.email.endsWith("@akgec.ac.in")  //TODO: Add domain restriction for email
         try {
-          if (profile.email_verified && profile.email.endsWith("@akgec.ac.in")) {
+          if (profile.email_verified ) {
+
             const password = generatePassword();
             const res = await api.post(
-              "/user/register",
+              "/auth/google/auth",
               {
+              
                 name: profile.name,
                 email: profile.email,
                 password,
@@ -80,26 +78,24 @@ const handler = NextAuth({
               console.error("Google sign-in failed:", res.data.message);
               return false;
             }
-
-            return true; // Successful sign-in
-          } else {
-            throw new Error("Please use your AKGEC email to sign in");
-          }
+            const user = res.data.data;
+            return user;
+          } 
         } catch (err) {
           console.error("Google sign-in error:", err);
           return false;
         }
       }
-
       return true;
     },
     async jwt({ token, user }) {
       if (user) {
         token = { ...token, ...user };
-      }
+      } 
       return token;
     },
     async session({ session, token }) {
+      console.log("Session token:",session, token);
       session.user = token as any;
       return session;
     },

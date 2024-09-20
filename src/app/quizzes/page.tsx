@@ -5,8 +5,11 @@ import Instruction from "@/components/component/Quiz/Instruction";
 import Thanks from "@/components/component/Quiz/Thanks";
 import Header from "@/components/component/Quiz/Header";
 import Main from "@/components/component/Quiz/Main";
+import { useSession } from "next-auth/react";
 
 const QuizzesPage: React.FC = () => {
+  const { data:session } = useSession();
+  console.log( "UseSession",session);
   // const [phase, setPhase] = useState<
   //   "start" | "quiz" | "instruction" | "thanks"
   // >("start");
@@ -27,6 +30,7 @@ const QuizzesPage: React.FC = () => {
     <Header />
     <div className="mt-2 flex-grow flex flex-col">
       <Main />
+      {/* <Thanks /> */}
     </div>
   </div>
 

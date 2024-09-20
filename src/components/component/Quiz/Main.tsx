@@ -14,7 +14,7 @@ import {
 
 const Main = () => {
     const { data:session } = useSession();
-    // console.log(session?.user?.id);
+    console.log(session?.user?.id);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [markedQuestions, setMarkedQuestions] = useState<Set<number>>(
     new Set()

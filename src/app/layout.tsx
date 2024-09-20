@@ -6,6 +6,7 @@ import "./globals.css";
 import { cn } from "../lib/utils";
 import Logo from "./MoE_logo.png";
 import Provider from "@/Provider";
+import ReactQueryProvider from "./ReactQueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,11 +31,9 @@ export default function RootLayout({
           inter.className
         )}
       >
-        <Provider >
-        {children}
-
-        </Provider>
-
+        <ReactQueryProvider>
+          <Provider>{children}</Provider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

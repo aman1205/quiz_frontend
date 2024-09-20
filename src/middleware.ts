@@ -6,7 +6,7 @@ interface UserToken {
   id: string;
   name: string;
   email: string;
-  role: "ADMIN" | "USER";
+  role: "admin" | "user";
   accessToken: string;
   iat: number;
   exp: number;
@@ -47,7 +47,7 @@ export default async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL("/login", request.url));
     }
 
-    if (ADMIN_ROUTES.includes(pathname) && userRole !== "ADMIN") {
+    if (ADMIN_ROUTES.includes(pathname) && userRole !== "admin") {
       console.log("User is not authorized to access admin routes.");
       return NextResponse.redirect(new URL("/login", request.url));
     }
