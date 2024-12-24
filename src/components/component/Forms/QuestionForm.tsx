@@ -29,9 +29,32 @@ import {
 import { useQuizForm } from "@/lib/schema/FormSchema";
 import { handleSubmit } from "@/lib/formSubmission";
 import FileUploadForm from "./FileUploadForm";
+import ImageUpload from "@/components/common/ImageUpload";
+import { useState } from "react";
+import { uploadImageToCloudinary } from "@/lib/uploadToCloudinary";
 
 const QuestionForm = () => {
   const form = useQuizForm();
+  const [uploading, setUploading] = useState(false);
+  const [questionImage, setQuestionImage] = useState<string | null>(null);
+
+
+  const handleImageUpload = async (file: File) => {
+    setUploading(true); 
+    try {
+      const imageUrl = await uploadImageToCloudinary(file);
+      setQuestionImage(imageUrl);
+    } catch (error) {
+      console.error("Image upload failed:", error);
+    } finally {
+      setUploading(false); // Reset loading state
+    }
+  };
+
+  const onSubmit = async (values: any) => {
+    await handleSubmit({ ...values, imageUrl: questionImage }, form);
+  };
+
 
   return (
     <div className="p-4 md:p-6 w-full">
@@ -150,7 +173,36 @@ const QuestionForm = () => {
                 />
               </div>
 
-              <Button type="submit" className="w-2/6 mx-auto">
+              <div>
+              <FormField
+                  control={form.control}
+                  name="imageUrl"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Correct Answer (optional)</FormLabel>
+                      <FormControl>
+                        <Input
+                          id="picture" 
+                          type="file" 
+                          accept="image/*"
+                          {...field}
+                          onChange={(e) => {
+                            const file = e.target.files?.[0];
+                            if (file) handleImageUpload(file);
+                          }}
+                          className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                 {uploading && <p>Uploading...</p>}
+                 {questionImage && <img src={questionImage} alt="Uploaded" className="mt-4" />}
+              </div>
+           
+
+              <Button type="submit" className="w-2/6 mx-auto" disabled={uploading}>
                 Create Question
               </Button>
             </form>

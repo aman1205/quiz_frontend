@@ -76,4 +76,7 @@
   }
 
 
-   
+  .relativePositioning {
+    position: relative;
+    height: fit-content;
+  }  

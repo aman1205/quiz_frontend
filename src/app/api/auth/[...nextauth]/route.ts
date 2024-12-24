@@ -13,30 +13,45 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
+        const isRegister = req.body?.isRegister === 'true'; // Convert to boolean
+
         try {
-          const res = await api.post(
-            "/user/register",
-            {
-              email: credentials?.email,
-              password: credentials?.password,
-            },
-            { withCredentials: true }
-          );
-          console.log("Response status:", res.data.statusCode);
-          if (res.data.statusCode !== 201) {
-            const errorDetails = await res.data.message;
-            console.error("Login failed:", errorDetails);
-            return null; 
+          if (isRegister) {
+            console.log("Registering user with credentials:", credentials);
+
+            // Handle Registration
+            const res = await api.post(
+              "/user/register",
+              {
+                email: credentials?.email,
+                password: credentials?.password,
+              },
+              { withCredentials: true }
+            );
+            if (res.data.statusCode !== 201) {
+              console.error("Registration failed:", res.data.message);
+              return null; 
+            }
+            return res.data.data || null; // Return the registered user data
+          } else {
+            // Handle Login
+            console.log("Logging in with credentials:", credentials);
+            const res = await api.post(
+              "/auth/login",
+              {
+                email: credentials?.email,
+                password: credentials?.password,
+              },
+              { withCredentials: true }
+            );
+            if (res.data.statusCode !== 200) {
+              console.error("Login failed:", res.data.message);
+              return null; 
+            }
+            return res.data.data || null; // Return the logged-in user data
           }
-          const user = await res.data.data;
-          console.log("User data received:", user);
-          return user || null;
         } catch (err: any) {
-          if (err.response) {
-            console.error("Login failed:", err.response.data.message);
-            throw new Error(err.response.data.message);
-          }
-          console.error("Authorization error:", err);
+          console.error("Authorization error:", err.response?.data?.message || err.message);
           return null;
         }
       },
@@ -44,29 +59,17 @@ const handler = NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-      // profile(profile) {
-      //   return {
-      //     id: profile.sub,
-      //     name: profile.name,
-      //     email: profile.email,
-      //     image: profile.picture,
-      //     role: profile.role ?? "user",
-      //   };
-      // },
     }),
   ],
   callbacks: {
-    async signIn({ account, profile }: any) {
-      if (account.provider === "google") {
-        // && profile.email.endsWith("@akgec.ac.in")  //TODO: Add domain restriction for email
-        try {
-          if (profile.email_verified ) {
-
+    async signIn({ account, profile }) {
+      if (account?.provider === "google") {
+        if (profile?.email) {
+          try {
             const password = generatePassword();
             const res = await api.post(
               "/auth/google/auth",
               {
-              
                 name: profile.name,
                 email: profile.email,
                 password,
@@ -78,12 +81,12 @@ const handler = NextAuth({
               console.error("Google sign-in failed:", res.data.message);
               return false;
             }
-            const user = res.data.data;
-            return user;
-          } 
-        } catch (err) {
-          console.error("Google sign-in error:", err);
-          return false;
+
+            return true; // Sign-in successful
+          } catch (err) {
+            console.error("Google sign-in error:", err);
+            return false;
+          }
         }
       }
       return true;
@@ -91,12 +94,11 @@ const handler = NextAuth({
     async jwt({ token, user }) {
       if (user) {
         token = { ...token, ...user };
-      } 
+      }
       return token;
     },
     async session({ session, token }) {
-      console.log("Session token:",session, token);
-      session.user = token as any;
+      session.user = token as any; 
       return session;
     },
   },
@@ -105,6 +107,7 @@ const handler = NextAuth({
   },
   session: {
     strategy: "jwt",
+    maxAge: 4 * 60 * 60
   },
   secret: process.env.NEXTAUTH_SECRET,
 });

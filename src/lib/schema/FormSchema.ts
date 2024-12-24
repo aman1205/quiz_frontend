@@ -8,6 +8,7 @@ const questionSchema = z.object({
   options: z.array(z.string()),
   correctAnswer: z.union([z.string(), z.number()]),
   category: z.string(),
+  imageUrl:z.string().optional() , 
 });
 
 const useQuizForm = () => {
@@ -18,6 +19,7 @@ const useQuizForm = () => {
       options: [],
       correctAnswer: "",
       category: "",
+      imageUrl:''
     },
   });
 };

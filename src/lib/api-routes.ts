@@ -1,4 +1,5 @@
 export const UserRoute='/user';
+export const UserFindAllRoute='/user/findall';
 export const AuthRoute='/auth';
 export const QuestionRoute='/questions';
 export const QuizRoute='/quiz';

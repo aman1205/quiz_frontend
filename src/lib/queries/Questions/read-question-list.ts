@@ -2,12 +2,13 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { apiAuth } from "@/lib/axios";
+import { QuestionRoute } from "@/lib/api-routes";
 
-export const getAllCoinsData = () => {
+export const getAllQuestion = () => {
 	return useQuery({
-		queryKey: ["coinList"],
+		queryKey: ["questionsList"],
 		queryFn: async () => {
-			return await apiAuth.get('questions');
+			return await apiAuth.get(QuestionRoute);
 		},
 		select: (response) => response.data,
 	});

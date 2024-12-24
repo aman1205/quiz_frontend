@@ -48,6 +48,7 @@ function Login() {
     const  result = await signIn("credentials", {
       email: values.email,
       password: values.password,
+      isRegister: false,
       redirect:false,
     });
     if (result && result.error) {
@@ -67,7 +68,7 @@ function Login() {
   };
 
   const handleGoogleLogin = async () => {
-    const result = await signIn("google", { redirect: false }); // Set redirect to false to handle the response manually.
+    const result = await signIn("google", { redirect: false });
   
     if (result?.error) {
       // Show a toast error if login fails due to an invalid email
