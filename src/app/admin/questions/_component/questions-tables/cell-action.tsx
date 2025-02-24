@@ -1,12 +1,4 @@
 'use client';
-
-import toast, { Toaster } from 'react-hot-toast';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-import { Edit, MoreHorizontal, Trash } from 'lucide-react';
-
-import { deleteUserById } from '@/lib/mutations/User/delete-user-mutations';
-
 import { AlertModal } from '@/components/modal/alert-modal';
 import { Button } from '@/components/ui/button';
 import {
@@ -16,37 +8,24 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
-import { User } from '@/constants/data';
+import { Questions } from '@/constants/data';
+import { Edit, MoreHorizontal, Trash } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 interface CellActionProps {
-  data: User;
+  data: Questions;
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  const { mutate: deleteUser } = deleteUserById();
 
+  const onConfirm = async () => {};
 
-  const onConfirm = async () => {
-    setLoading(true);
-    deleteUser(data.id, {
-      onSuccess: () => {
-        toast.success('User deleted successfully', {duration: 3000});
-        setOpen(false);
-      },
-      onError: () => {
-        toast.error('Error deleting user' , {duration: 3000});
-      },
-      onSettled: () => {
-        setLoading(false);
-      }
-    });
-  };
   return (
     <>
-      <Toaster />
       <AlertModal
         isOpen={open}
         onClose={() => setOpen(false)}
@@ -64,7 +43,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
 
           <DropdownMenuItem
-            onClick={() => router.push(`/admin/users/${data.id}`)}
+            onClick={() => router.push(`/dashboard/product/${data.id}`)}
           >
             <Edit className="mr-2 h-4 w-4" /> Update
           </DropdownMenuItem>

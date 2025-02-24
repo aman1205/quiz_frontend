@@ -7,6 +7,7 @@ import { cn } from "../lib/utils";
 import Logo from "./MoE_logo.png";
 import Provider from "@/Provider";
 import ReactQueryProvider from "./ReactQueryProvider";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
           inter.className
         )}
       >
+        <Toaster />
         <ReactQueryProvider>
           <Provider>{children}</Provider>
         </ReactQueryProvider>

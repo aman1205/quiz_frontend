@@ -40,8 +40,8 @@ import {
   ChevronRight,
   ChevronsUpDown,
   CreditCard,
-  GalleryVerticalEnd,
-  LogOut
+  LogOut,
+  BrainCircuit
 } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
@@ -54,9 +54,9 @@ import ThemeToggle from './ThemeToggle/theme-toggle';
 import { UserNav } from './user-nav';
 
 export const company = {
-  name: 'Acme Inc',
-  logo: GalleryVerticalEnd,
-  plan: 'Enterprise'
+  name: 'Mlcoe',
+  logo: BrainCircuit,
+  plan: 'Society'
 };
 
 export default function AppSidebar({

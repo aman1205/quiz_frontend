@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { CSVLink } from 'react-csv';
 
+
 import axios from 'axios'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -29,7 +30,6 @@ export default function Page() {
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        // Simulating an API call with sample data
         const response = { data: sampleData }
         setResults(response.data)
       } catch (error) {
@@ -73,7 +73,7 @@ export default function Page() {
     <div className="flex-1 p-4 md:p-6 items-center justify-center bg-white dark:bg-gray-950">
       <div className="w-full space-y-6">
         <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Quiz Results</h1>
-        <div className="bg-white dark:bg-gray-950 rounded-md shadow p-6 space-y-4">
+        <div className="bg-white dark:bg-gray-950 rounded-md shadow-lg p-6 mt-6">
           <div className="flex items-center justify-between">
             <div className="text-sm font-medium text-gray-500 dark:text-gray-400">Email</div>
             <div className="text-sm font-medium text-gray-500 dark:text-gray-400">Name</div>

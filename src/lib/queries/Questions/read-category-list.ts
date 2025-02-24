@@ -2,13 +2,13 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { apiAuth } from "@/lib/axios";
-import { QuestionRoute } from "@/lib/api-routes";
+import { QuestionSubCategory } from "@/lib/api-routes";
 
-export const getAllQuestion = () => {
+export const getAllCategory = () => {
 	return useQuery({
-		queryKey: ["questionsList"],
+		queryKey: ["categoryList"],
 		queryFn: async () => {
-			 return await apiAuth.get(QuestionRoute);
+			 return await apiAuth.get(QuestionSubCategory);
 		},
 		select: (response) => response.data,
 	});

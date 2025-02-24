@@ -52,7 +52,8 @@ const QuestionForm = () => {
   };
 
   const onSubmit = async (values: any) => {
-    await handleSubmit({ ...values, imageUrl: questionImage }, form);
+    console.log({ ...values, imageUrl: questionImage })
+    // await handleSubmit({ ...values, imageUrl: questionImage }, form);
   };
 
 

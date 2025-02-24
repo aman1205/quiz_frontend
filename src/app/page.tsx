@@ -27,6 +27,12 @@ export default function Component() {
   };
   axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
   axios.defaults.withCredentials = true;
+
+  const handleUploadSuccess = (uploadedFiles: any[]) => {
+    console.log('Files uploaded:', uploadedFiles);
+    // Handle file URLs or perform further actions
+  };
+
   return (
     <div className="flex flex-col min-h-[100vh] xl:w-full">
       <header className="fixed top-0 left-0 z-10 w-full bg-gray-900 px-4 py-3 text-white shadow-md dark:bg-gray-800 md:px-6 lg:px-8 ">
