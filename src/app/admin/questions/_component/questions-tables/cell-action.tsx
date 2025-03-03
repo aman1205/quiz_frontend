@@ -9,20 +9,37 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 import { Questions } from '@/constants/data';
+import { useDeleteQuestionById } from '@/lib/mutations/Questions/delete-question-mutation';
 import { Edit, MoreHorizontal, Trash } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 interface CellActionProps {
   data: Questions;
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
+  const {mutate ,} =useDeleteQuestionById();
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
-  const onConfirm = async () => {};
+  const onConfirm = async () => {
+    setLoading(true);
+    mutate(data.id, {
+      onSuccess: () => {
+        toast.success('Questions deleted successfully', {duration: 3000});
+        setOpen(false);
+      },
+      onError: () => {
+        toast.error('Error deleting user' , {duration: 3000});
+      },
+      onSettled: () => {
+        setLoading(false);
+      }
+    });
+  };
 
   return (
     <>
@@ -43,7 +60,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
 
           <DropdownMenuItem
-            onClick={() => router.push(`/dashboard/product/${data.id}`)}
+            onClick={() => router.push(`/admin/questions/${data.id}`)}
           >
             <Edit className="mr-2 h-4 w-4" /> Update
           </DropdownMenuItem>

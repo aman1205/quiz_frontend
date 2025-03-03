@@ -28,7 +28,7 @@ export const navItems: NavItem[] = [
   },
   {
     title: 'Questions',
-    url: '/admin/questiona',
+    url: '#',
     icon: 'product',
     isActive: false,
     items: [
@@ -100,5 +100,11 @@ export type Questions={
   correctAnswer:string;
   category:string;
   createdAt:string;
+}
+
+export type Quiz={
+  id:string ,
+  title:string,
+  questions:Questions[]
 }
 

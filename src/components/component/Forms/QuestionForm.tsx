@@ -36,13 +36,14 @@ import { uploadImageToCloudinary } from "@/lib/uploadToCloudinary";
 const QuestionForm = () => {
   const form = useQuizForm();
   const [uploading, setUploading] = useState(false);
-  const [questionImage, setQuestionImage] = useState<string | null>(null);
+  const [questionImage, setQuestionImage] = useState<string | null>('https://res.cloudinary.com/dwpq0eyis/image/upload/v1740505007/diwmymzvfcbzoewp7db9.png');
 
 
   const handleImageUpload = async (file: File) => {
     setUploading(true); 
     try {
       const imageUrl = await uploadImageToCloudinary(file);
+      console.log(imageUrl ,"Test@123")
       setQuestionImage(imageUrl);
     } catch (error) {
       console.error("Image upload failed:", error);
@@ -199,7 +200,7 @@ const QuestionForm = () => {
                   )}
                 />
                  {uploading && <p>Uploading...</p>}
-                 {questionImage && <img src={questionImage} alt="Uploaded" className="mt-4" />}
+                 {questionImage && <img src={questionImage} width={100} height={100} alt="Uploaded" className="mt-4" />}
               </div>
            
 

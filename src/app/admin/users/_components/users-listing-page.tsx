@@ -20,7 +20,7 @@ const UsersListPage = () => {
       <div className="space-y-4">
         <div className="flex items-start justify-between">
           <Heading
-            title={`Users (10)`}
+            title={`Users ${userCount}`}
             description="Manage Users (Server side table functionalities.)"
           />
           <Link

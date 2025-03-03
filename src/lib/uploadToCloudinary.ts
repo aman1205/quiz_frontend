@@ -1,7 +1,7 @@
 export const uploadImageToCloudinary = async (file: File): Promise<string> => {
     const formData = new FormData();  
     formData.append("file", file);  
-    formData.append("upload_preset", process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET as string);
+    formData.append("upload_preset",'quiz_website');
   
     try {
       const response = await fetch(

@@ -2,30 +2,25 @@
 import { useMutation } from "@tanstack/react-query";
 
 import { apiAuth } from "@/lib/axios";
+import { QuestionRoute } from "@/lib/api-routes";
 
-export interface IRequestUserSignUp {
-	firstname: string;
-	lastname: string;
-	username: string;
-	email: string;
-	phoneNumber: string;
-	password: string;
+export interface IQuestion {
+	text: string;
+	options: string[];
+	image_url: string;
+	correctAnswer: string;
+	category: string;
 }
 
-export const useUserSignUp = () => {
-	const userSignUp = async (signUpData: IRequestUserSignUp) => {
-		return await apiAuth.post('/questions', {
-			firstName: signUpData.firstname,
-			lastName: signUpData.lastname,
-			username: signUpData.username,
-			phoneNumber: signUpData.phoneNumber,
-			email: signUpData.email,
-			password: signUpData.password,
+export const useCreateQuestion = () => {
+	const createQuestion = async (questionData: IQuestion) => {
+		return await apiAuth.post(QuestionRoute, {
+			questionData
 		});
 	};
 
 	return useMutation({
-		mutationKey: ["userSignUp"],
-		mutationFn: (signUpData: IRequestUserSignUp) => userSignUp(signUpData),
+		mutationKey: ["createQuestion"],
+		mutationFn: (questionData: IQuestion) => createQuestion(questionData),
 	});
 };

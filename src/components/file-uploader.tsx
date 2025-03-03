@@ -15,6 +15,7 @@ const FileUploader = ({ onUploadSuccess }: FileUploaderProps) => {
     <CldUploadWidget
       uploadPreset="quiz_website"
       onSuccess={handleSuccess}
+      
       options={{
         multiple: false,
         clientAllowedFormats: ["jpeg", "png", "jpg", "webp"],
