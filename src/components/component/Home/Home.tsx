@@ -1,73 +1,46 @@
-import { motion, useInView , useAnimation } from "framer-motion";
-import Link from "next/link";
-import React, { useRef , useEffect} from "react";
-
 function Home() {
-  const ref  = useRef(null);
-  const isInView = useInView(ref , {once: false});
-  const mainControls = useAnimation();
-  const slideControls = useAnimation();
-
-  useEffect(() => { 
-    if(isInView) {
-      mainControls.start("visible");
-      slideControls.start("visible");
-    }
-  }, [isInView]);
   return (
-    <section ref={ref} className="flex h-[100vh] w-full items-center justify-center bg-gray-900 text-white">
-      <motion.div
-        variants={{
-          hidden: { opacity: 0, scale: 0.6 },
-          visible: { opacity: 1, scale: 0.9 },
-        }}
-        initial="hidden"
-        animate={mainControls}
-        transition={{ duration: 0.25  ,delay: 0.29}}
-        className="container mx-auto px-4 text-center md:px-6 lg:px-8 animate-fadeIn"
+      <section
+        id="hero"
+        className="relative bg-gradient-to-b from-neutral-900 to-neutral-800 min-h-screen flex items-center overflow-hidden"
       >
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-9xl">
-          Welcome to Mloce
-        </h1>
-        <p className="mt-4 text-lg text-gray-400 md:text-xl lg:text-2xl">
-          Explore the world of machine learning with our college website.
-        </p>
-        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-center sm:justify-center">
-          <Link
-            className="inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-6 text-sm font-medium text-white shadow-md transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-700 dark:hover:bg-blue-800 dark:focus:ring-blue-600 animate-bounce"
-            href="#"
-          >
-            Explore Now
-          </Link>
-          <Link
-            className="inline-flex h-10 items-center justify-center rounded-md border border-white px-6 text-sm font-medium text-white transition-colors hover:bg-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-600 animate-pulse"
-            href="#"
-          >
-            Learn More
-          </Link>
-        </div>
-      </motion.div>
-      <motion.div variants={{
-        hidden: { left: 0},
-        visible: { left: "100%"},
-      
-      }}
-      initial="hidden"
-      animate={slideControls}
-      transition={{ duration: 0.5 , ease:"easeIn"}}
-      style={{
-          position: "absolute",
-          top: 4,
-          bottom: 4,
-          left: 0,
-          right: 0,
-          background:"var(--color-primary)",
-          zIndex: 20,
-      }}
-      >
+        {/* <!-- Particle Animation Container --> */}
+        <div id="particles-js" className="absolute inset-0 opacity-30"></div>
 
-      </motion.div>
-    </section>
+        <div className="container mx-auto px-6 py-20 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="animate__animated animate__fadeInLeft">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-['Space_Grotesk']">
+                Empowering the Future with
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#64FFDA] to-blue-400">
+                  Machine Learning
+                </span>
+              </h1>
+              <p className="text-gray-300 text-lg mb-8 font-['Inter']">
+                Join our community of innovators and explore the frontiers of
+                artificial intelligence. Together, we'll shape the technologies
+                of tomorrow.
+              </p>
+              <div className="flex gap-4">
+                <button className="bg-[#64FFDA] text-neutral-900 px-8 py-3 rounded-lg font-bold hover:transform hover:scale-105 transition-all duration-300 animate__animated animate__pulse animate__infinite animate__slower font-['Inter']">
+                  Join Now
+                </button>
+                <button className="border-2 border-[#64FFDA] text-[#64FFDA] px-8 py-3 rounded-lg font-bold hover:bg-[#64FFDA] hover:text-neutral-900 transition-all duration-300 font-['Inter']">
+                  Learn More
+                </button>
+              </div>
+            </div>
+
+            <div className="hidden md:block animate__animated animate__fadeInRight">
+              <div className="relative">
+                <div className="w-full h-[400px] rounded-xl bg-gradient-to-r from-[#64FFDA]/20 to-blue-500/20 backdrop-blur-xl border border-white/10 p-6 transform rotate-3 hover:rotate-0 transition-all duration-500">
+                  <div className="neural-network-animation"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
   );
 }
 

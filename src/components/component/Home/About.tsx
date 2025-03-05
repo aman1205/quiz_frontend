@@ -1,47 +1,77 @@
-import React from 'react'
+import React from "react";
 
 function About() {
   return (
-    <section
-    className="bg-gray-100 py-12 dark:bg-gray-800 md:py-24 lg:py-32"
-    id="about"
-  >
-    <div className="container mx-auto px-4 md:px-6 lg:px-8">
-      <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
-        <div className="space-y-4">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            About Mloce
+    <section id="about" className="py-20 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-neutral-900 mb-4 font-['Space_Grotesk'] animate__animated animate__fadeInUp">
+            About Our Society
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 md:text-xl/relaxed">
-            Mloce is a college dedicated to the study and advancement of
-            machine learning. Our mission is to provide a world-class
-            education in this rapidly evolving field, empowering students
-            to become leaders in the industry.
-          </p>
-          <p className="text-gray-500 dark:text-gray-400 md:text-xl/relaxed">
-            At Mloce, we believe in the transformative power of machine
-            learning and its ability to solve complex problems. Our
-            curriculum is designed to equip students with the theoretical
-            knowledge and practical skills needed to thrive in this
-            dynamic landscape.
-          </p>
+          <div className="w-20 h-1 bg-[#64FFDA] mx-auto rounded-full"></div>
         </div>
-        <div className="relative">
-          <div className="absolute inset-0 -z-10 overflow-hidden">
-            <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-50 blur-xl animate-gradient-x" />
+
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="backdrop-blur-lg bg-gradient-to-r from-blue-50 to-transparent p-8 rounded-2xl border border-blue-100 shadow-lg animate__animated animate__fadeInLeft">
+            <h3 className="text-2xl font-bold text-neutral-800 mb-6 font-['Space_Grotesk']">
+              Our Mission
+            </h3>
+            <p className="text-neutral-600 mb-6 leading-relaxed font-['Inter']">
+              We are a community of passionate students dedicated to exploring
+              and advancing the field of Machine Learning. Our society serves as
+              a platform for learning, collaboration, and innovation in AI
+              technologies.
+            </p>
+            <p className="text-neutral-600 leading-relaxed font-['Inter']">
+              Through workshops, projects, and events, we aim to bridge the gap
+              between theoretical knowledge and practical applications in
+              Machine Learning.
+            </p>
           </div>
-          <img
-            alt="Mloce"
-            className="mx-auto aspect-video rounded-lg object-cover"
-            height={400}
-            src="https://res.cloudinary.com/dwpq0eyis/image/upload/v1714144680/MoE_logo_qwlgkf.png"
-            width={600}
-          />
+
+          <div className="space-y-6 animate__animated animate__fadeInRight">
+            <div className="bg-gradient-to-r from-blue-50 to-transparent p-6 rounded-xl border border-blue-100 hover:shadow-lg transition-all duration-300">
+              <h4 className="text-xl font-bold text-neutral-800 mb-3 font-['Space_Grotesk']">
+                Innovation Hub
+              </h4>
+              <p className="text-neutral-600 font-['Inter']">
+                Access to cutting-edge ML resources and collaborative projects
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-transparent p-6 rounded-xl border border-blue-100 hover:shadow-lg transition-all duration-300">
+              <h4 className="text-xl font-bold text-neutral-800 mb-3 font-['Space_Grotesk']">
+                Learning Environment
+              </h4>
+              <p className="text-neutral-600 font-['Inter']">
+                Regular workshops, seminars, and hands-on training sessions
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-transparent p-6 rounded-xl border border-blue-100 hover:shadow-lg transition-all duration-300">
+              <h4 className="text-xl font-bold text-neutral-800 mb-3 font-['Space_Grotesk']">
+                Industry Connect
+              </h4>
+              <p className="text-neutral-600 font-['Inter']">
+                Network with industry experts and gain real-world exposure
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <div className="inline-flex gap-4 items-center bg-neutral-900 px-8 py-4 rounded-full animate__animated animate__pulse animate__infinite animate__slower">
+            <span className="text-white font-['Inter']">
+              Join our growing community of
+            </span>
+            <span className="text-[#64FFDA] font-bold font-['Space_Grotesk']">
+              500+ Members
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  )
+    </section>
+  );
 }
 
-export default About
+export default About;

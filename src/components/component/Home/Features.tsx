@@ -1,124 +1,162 @@
-import React from 'react'
+import React from "react";
 
 function Features() {
   return (
-    <section
-    className="bg-gray-100 py-12 dark:bg-gray-800 md:py-24 lg:py-32"
-    id="features"
-  >
-    <div className="container mx-auto px-4 md:px-6 lg:px-8">
-      <div className="space-y-4 text-center">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-          Features of Mloce
+    <section id="domains" className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          Our Domains
         </h2>
-        <p className="text-gray-500 dark:text-gray-400 md:text-xl/relaxed">
-          Mloce offers a comprehensive education in machine learning,
-          focusing on both theoretical and practical aspects.
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* <!-- Deep Learning Card --> */}
+          <div className="transform hover:scale-105 transition-all duration-300 bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl">
+            <div className="flex flex-col items-center">
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                <svg
+                  className="w-12 h-12 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                Deep Learning
+              </h3>
+              <p className="text-gray-600 text-center">
+                Exploring neural networks and advanced learning algorithms for
+                complex pattern recognition.
+              </p>
+            </div>
+          </div>
+
+          {/* <!-- Computer Vision Card --> */}
+          <div className="transform hover:scale-105 transition-all duration-300 bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl">
+            <div className="flex flex-col items-center">
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                <svg
+                  className="w-12 h-12 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                Computer Vision
+              </h3>
+              <p className="text-gray-600 text-center">
+                Teaching machines to understand and process visual information
+                from the world.
+              </p>
+            </div>
+          </div>
+
+          {/* <!-- NLP Card --> */}
+          <div className="transform hover:scale-105 transition-all duration-300 bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl">
+            <div className="flex flex-col items-center">
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                <svg
+                  className="w-12 h-12 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                Natural Language Processing
+              </h3>
+              <p className="text-gray-600 text-center">
+                Enabling machines to understand, interpret, and generate human
+                language.
+              </p>
+            </div>
+          </div>
+
+          {/* <!-- Reinforcement Learning Card --> */}
+          <div className="transform hover:scale-105 transition-all duration-300 bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl">
+            <div className="flex flex-col items-center">
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                <svg
+                  className="w-12 h-12 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                Reinforcement Learning
+              </h3>
+              <p className="text-gray-600 text-center">
+                Training agents to make decisions through reward-based learning
+                systems.
+              </p>
+            </div>
+          </div>
+
+          {/* <!-- AI Ethics Card --> */}
+          <div className="transform hover:scale-105 transition-all duration-300 bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl">
+            <div className="flex flex-col items-center">
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                <svg
+                  className="w-12 h-12 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                AI Ethics
+              </h3>
+              <p className="text-gray-600 text-center">
+                Exploring ethical considerations and responsible AI development
+                practices.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-        <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-950 animate-fadeInUp">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500 text-white">
-            <BeakerIcon className="h-6 w-6" />
-          </div>
-          <h3 className="mt-4 text-xl font-bold">
-            Cutting-Edge Curriculum
-          </h3>
-          <p className="mt-2 text-gray-500 dark:text-gray-400">
-            Our curriculum is constantly updated to keep pace with the
-            rapidly evolving field of machine learning.
-          </p>
-        </div>
-        <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-950 animate-fadeInUp">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white">
-            <LaptopIcon className="h-6 w-6" />
-          </div>
-          <h3 className="mt-4 text-xl font-bold">Hands-On Learning</h3>
-          <p className="mt-2 text-gray-500 dark:text-gray-400">
-            Our students engage in practical projects and workshops to
-            reinforce their understanding of machine learning concepts.
-          </p>
-        </div>
-        <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-950 animate-fadeInUp">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500 text-white">
-            <GraduationCapIcon className="h-6 w-6" />
-          </div>
-          <h3 className="mt-4 text-xl font-bold">
-            Industry Partnerships
-          </h3>
-          <p className="mt-2 text-gray-500 dark:text-gray-400">
-            We collaborate with leading companies in the machine learning
-            industry to provide internships and job opportunities for our
-            students.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  )
+    </section>
+  );
 }
 
-export default Features
-
-
-function BeakerIcon(props: any) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M4.5 3h15" />
-        <path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3" />
-        <path d="M6 14h12" />
-      </svg>
-    );
-  }
-
-  function GraduationCapIcon(props: any) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
-        <path d="M22 10v6" />
-        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
-      </svg>
-    );
-  }
-  
-  function LaptopIcon(props: any) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
-      </svg>
-    );
-  }
-  
+export default Features;
