@@ -20,7 +20,6 @@ const QuizListPage = () => {
           </Link>
         </div>
         <Separator />
-        //table
       </div>
     </PageContainer>
   );

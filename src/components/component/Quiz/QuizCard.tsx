@@ -1,21 +1,28 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Brain, Clock, Users, Trophy } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Brain, Clock, Users, Trophy } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface QuizCardProps {
-  id: string | number
-  title: string
-  description: string
-  questions: number
-  timeInMinutes: number
-  participants?: number
-  category: string
-  difficulty?: 'Easy' | 'Intermediate' | 'Hard'
-  featured?: boolean
+  id: string | number;
+  title: string;
+  description: string;
+  questions: number;
+  timeInMinutes: number;
+  participants?: number;
+  category: string;
+  difficulty?: "Easy" | "Intermediate" | "Hard";
+  featured?: boolean;
 }
 
 export function QuizCard({
@@ -26,21 +33,20 @@ export function QuizCard({
   timeInMinutes,
   participants,
   category,
-  difficulty = 'Intermediate',
-  featured = false
+  difficulty = "Intermediate",
+  featured = false,
 }: QuizCardProps) {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleCardClick = () => {
-    router.push(`/quizzes/${id}`)
-  }
+    router.push(`/quizzes/${id}`);
+  };
 
   return (
-    <Card 
+    <Card
       className={`overflow-hidden transition-all duration-300 hover:shadow-lg ${
-        featured ? 'border-primary/50' : ''
+        featured ? "border-primary/50" : ""
       }`}
-      onClick={handleCardClick}
     >
       {featured && (
         <div className="bg-primary text-primary-foreground text-xs font-medium py-1 px-3 text-center">
@@ -54,7 +60,9 @@ export function QuizCard({
             {category}
           </Badge>
         </div>
-        <CardDescription className="line-clamp-2">{description}</CardDescription>
+        <CardDescription className="line-clamp-2">
+          {description}
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground mb-2">
@@ -86,8 +94,10 @@ export function QuizCard({
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">Start Quiz</Button>
+        <Button className="w-full" onClick={handleCardClick}>
+          Start Quiz
+        </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }

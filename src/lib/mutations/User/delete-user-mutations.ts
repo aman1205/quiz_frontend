@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiAuth } from '@/lib/axios';
 import { UserRoute } from '@/lib/api-routes';
 
-export const deleteUserById = () => {
+export const useDeleteUserById = () => {
   const queryClient = useQueryClient();
 
   return useMutation({

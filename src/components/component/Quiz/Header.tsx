@@ -3,7 +3,7 @@ import PortolLogo from '@/app/3 1.png'
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center p-4 shadow-xl">
+    <header className="bg-gray-50 flex justify-between items-center p-4 shadow-xl">
         <div>
             <Image src={PortolLogo} alt="logo" width={200} height={150} />
         </div>

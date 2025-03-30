@@ -1,0 +1,1345 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <meta name="description" content="Take part in interactive quizzes with our modern Quiz Portal 2024-25. Features include timed assessments, question navigation, review options, and a user-friendly interface for optimal test-taking experience.">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="">
+
+      
+      
+
+
+      <title>Quiz Portal 2024-25 | Modern Online Assessment Platform</title>
+      <!-- SEO Description -->
+      <meta name="description" content="Take part in interactive quizzes with our modern Quiz Portal 2024-25. Features include timed assessments, question navigation, review options, and a user-friendly interface for optimal test-taking experience.">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      
+      <!-- Header Scripts -->
+      <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+          document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+      </script>
+
+      <!-- Preconnect -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <!-- Font stylesheet -->
+
+      <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+      // render the settings object
+      //console.log('settings', [object Object]);
+      document.addEventListener('DOMContentLoaded', function() {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: {
+                  DEFAULT: '#3a86ff',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8', 
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  DEFAULT: '#8338ec',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3', 
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  DEFAULT: '',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3', 
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['Roboto, sans-serif', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Open Sans, sans-serif', 'Inter', 'system-ui', 'sans-serif'],
+                body: ['Open Sans, sans-serif', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      });
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="robots" content="">
+      <meta name="google-site-verification" content="">
+      <meta name="baidu-verification" content="">
+      <meta name="yandex-verification" content="">
+      <meta name="bing-verification" content="">
+      <meta property="og:title" content="">
+      <meta property="og:description" content="">
+      <meta property="og:image" content="">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="Quiz Portal 2024-25">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="">
+      <meta name="twitter:description" content="">
+      <meta name="twitter:image" content="">
+    
+      
+      <!-- Font Links -->
+     
+      <link rel="icon" type="image/x-icon" href="">
+
+      <style>
+        h1, h2, h3, h4, h5, h6 {
+          font-family: Roboto, sans-serif, Inter, system-ui, sans-serif;
+        }
+        body {
+          font-family: Open Sans, sans-serif, Inter, system-ui, sans-serif;
+        }
+      </style>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative h-full">
+        <div id="RolloutPageContent"><element id="7aa7060a-d822-4845-8bbd-8405d35cbf87" data-section-id="7aa7060a-d822-4845-8bbd-8405d35cbf87">
+
+
+<div id="root">
+  <header id="header">
+    <nav class="bg-white shadow-sm py-4">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <img src="https://placehold.co/40x40?text=Quiz" alt="Quiz Portal Logo" class="h-10 w-10" />
+          <span class="text-xl font-semibold text-indigo-700">Quiz Portal 2024-25</span>
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#" class="text-gray-700 hover:text-indigo-600 transition-colors">Home</a>
+          <a href="#" class="text-gray-700 hover:text-indigo-600 transition-colors">Categories</a>
+          <a href="#" class="text-gray-700 hover:text-indigo-600 transition-colors">Results</a>
+          <a href="#" class="text-gray-700 hover:text-indigo-600 transition-colors">Profile</a>
+          <a href="#" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition-colors">Sign Out</a>
+        </div>
+        
+        <div x-data="{ isOpen: false }" class="md:hidden">
+          <button @click="isOpen = !isOpen" class="text-gray-700 focus:outline-none" aria-label="Toggle menu">
+            <svg x-show="!isOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg x-show="isOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          
+          <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-100 transform" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" @click.away="isOpen = false" @resize.window="if (window.innerWidth > 1024) isOpen = false" class="absolute top-20 right-4 bg-white shadow-md rounded-md py-2 w-48 z-50">
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-100">Home</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-100">Categories</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-100">Results</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-100">Profile</a>
+            <a href="#" class="block px-4 py-2 text-indigo-600 font-medium hover:bg-indigo-100">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+
+</element><element id="83605e78-15fa-48c3-9add-cc2d53745571" data-section-id="83605e78-15fa-48c3-9add-cc2d53745571">
+
+
+<div id="root">
+  <section id="quiz-interface" class="bg-gray-50 min-h-screen py-6">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row gap-6">
+        <!-- Main Content Area -->
+        <div class="flex-1 bg-white rounded-lg shadow-sm p-6 order-2 md:order-1">
+          <!-- Category and Timer -->
+          <div class="flex justify-between items-center mb-6">
+            <div class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-md font-medium">
+              Category: Science
+            </div>
+            <div class="bg-red-100 text-red-800 px-4 py-2 rounded-md font-medium flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Time Left: 14:32
+            </div>
+          </div>
+          
+          <!-- Question Content -->
+          <div class="mb-8">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Question 5</h2>
+            <p class="text-gray-700 text-lg mb-6">Which of the following is NOT a renewable source of energy?</p>
+            
+            <!-- Multiple Choice Options -->
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <input type="radio" id="option1" name="question" class="mt-1 h-4 w-4 text-indigo-600 focus:ring-indigo-500" />
+                <label for="option1" class="ml-3 block text-gray-700">
+                  Solar Energy
+                </label>
+              </div>
+              
+              <div class="flex items-start">
+                <input type="radio" id="option2" name="question" class="mt-1 h-4 w-4 text-indigo-600 focus:ring-indigo-500" />
+                <label for="option2" class="ml-3 block text-gray-700">
+                  Wind Energy
+                </label>
+              </div>
+              
+              <div class="flex items-start">
+                <input type="radio" id="option3" name="question" class="mt-1 h-4 w-4 text-indigo-600 focus:ring-indigo-500" />
+                <label for="option3" class="ml-3 block text-gray-700">
+                  Natural Gas
+                </label>
+              </div>
+              
+              <div class="flex items-start">
+                <input type="radio" id="option4" name="question" class="mt-1 h-4 w-4 text-indigo-600 focus:ring-indigo-500" />
+                <label for="option4" class="ml-3 block text-gray-700">
+                  Hydroelectric Power
+                </label>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Navigation Buttons -->
+          <div class="flex flex-wrap justify-between items-center mt-10">
+            <div class="flex flex-wrap gap-3">
+              <button class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                </svg>
+                Mark for Review
+              </button>
+              
+              <button class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                </svg>
+                Skip
+              </button>
+              
+              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Save & Next
+              </button>
+            </div>
+            
+            <button class="px-6 py-2 mt-4 md:mt-0 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Submit Quiz
+            </button>
+          </div>
+        </div>
+        
+        <!-- Sidebar (Question Navigation) -->
+        <div class="bg-white rounded-lg shadow-sm p-6 md:w-72 order-1 md:order-2">
+          <h3 class="text-lg font-medium text-gray-800 mb-4">Question Navigator</h3>
+          
+          <div class="mb-3 flex items-center justify-between">
+            <div class="text-sm text-gray-600">Total: 25 Questions</div>
+            <div class="text-sm text-gray-600">Attempted: 4</div>
+          </div>
+          
+          <!-- Question Buttons Grid -->
+          <div class="grid grid-cols-5 gap-2 mb-6">
+            <button class="w-full py-2 bg-green-100 text-green-800 font-medium rounded hover:bg-green-200 transition-colors">1</button>
+            <button class="w-full py-2 bg-green-100 text-green-800 font-medium rounded hover:bg-green-200 transition-colors">2</button>
+            <button class="w-full py-2 bg-purple-100 text-purple-800 font-medium rounded hover:bg-purple-200 transition-colors">3</button>
+            <button class="w-full py-2 bg-green-100 text-green-800 font-medium rounded hover:bg-green-200 transition-colors">4</button>
+            <button class="w-full py-2 bg-indigo-100 text-indigo-800 font-medium rounded border-2 border-indigo-500">5</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">6</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">7</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">8</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">9</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">10</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">11</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">12</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">13</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">14</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">15</button>
+            <button class="w-full py-2 bg-red-100 text-red-800 font-medium rounded hover:bg-red-200 transition-colors">16</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">17</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">18</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">19</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">20</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">21</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">22</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">23</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">24</button>
+            <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors">25</button>
+          </div>
+          
+          <!-- Legend -->
+          <div class="space-y-2">
+            <div class="text-sm font-medium text-gray-700 mb-2">Legend:</div>
+            <div class="flex items-center">
+              <div class="w-4 h-4 bg-green-100 rounded mr-2"></div>
+              <span class="text-sm text-gray-700">Answered</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-4 h-4 bg-red-100 rounded mr-2"></div>
+              <span class="text-sm text-gray-700">Skipped</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-4 h-4 bg-purple-100 rounded mr-2"></div>
+              <span class="text-sm text-gray-700">Marked for Review</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-4 h-4 bg-indigo-100 border-2 border-indigo-500 rounded mr-2"></div>
+              <span class="text-sm text-gray-700">Current Question</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-4 h-4 bg-gray-100 rounded mr-2"></div>
+              <span class="text-sm text-gray-700">Not Visited</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+</element><element id="f670154d-5f65-4328-a4cf-79046dcf0710" data-section-id="f670154d-5f65-4328-a4cf-79046dcf0710">
+
+
+<div id="root">
+  <section id="question-display" class="bg-white rounded-lg shadow-sm p-6 mb-6">
+    <!-- Question Header -->
+    <div class="mb-6">
+      <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-semibold text-gray-800">Question 8</h2>
+        <span class="text-sm text-gray-500">8 of 25</span>
+      </div>
+      <div class="h-1 w-full bg-gray-200 mt-2">
+        <div class="h-1 bg-blue-500 w-[32%]"></div>
+      </div>
+    </div>
+    
+    <!-- Question Content -->
+    <div class="mb-8">
+      <div class="bg-indigo-50 p-4 rounded-lg mb-6">
+        <p class="text-gray-800 text-lg font-medium">Which of the following is an example of a chemical change?</p>
+      </div>
+      
+      <!-- Image (if applicable) -->
+      <div class="mb-6 flex justify-center">
+        <img src="https://placehold.co/600x300?text=Chemical+Reaction+Diagram" alt="Chemical reaction diagram" class="rounded-lg max-w-full h-auto shadow-sm" />
+      </div>
+      
+      <!-- Answer Options -->
+      <div class="space-y-4 mt-8">
+        <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer group">
+          <input type="radio" id="option1" name="question8" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
+          <label for="option1" class="ml-3 block text-gray-700 cursor-pointer group-hover:text-indigo-600 transition-colors w-full">
+            A. Water changing from liquid to ice
+          </label>
+        </div>
+        
+        <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer group">
+          <input type="radio" id="option2" name="question8" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
+          <label for="option2" class="ml-3 block text-gray-700 cursor-pointer group-hover:text-indigo-600 transition-colors w-full">
+            B. Dissolving sugar in water
+          </label>
+        </div>
+        
+        <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer group">
+          <input type="radio" id="option3" name="question8" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
+          <label for="option3" class="ml-3 block text-gray-700 cursor-pointer group-hover:text-indigo-600 transition-colors w-full">
+            C. Rusting of iron
+          </label>
+        </div>
+        
+        <div class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer group">
+          <input type="radio" id="option4" name="question8" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
+          <label for="option4" class="ml-3 block text-gray-700 cursor-pointer group-hover:text-indigo-600 transition-colors w-full">
+            D. Crushing a can
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Additional Information (if applicable) -->
+    <div class="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-100">
+      <div class="flex items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <div>
+          <p class="text-sm text-gray-700">Remember that chemical changes involve the formation of new substances, while physical changes do not alter the chemical composition of a substance.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Question Difficulty Indicator -->
+    <div class="mt-8 flex items-center">
+      <span class="text-sm text-gray-600 mr-2">Difficulty:</span>
+      <div class="flex items-center">
+        <span class="h-3 w-3 bg-green-500 rounded-full mr-1"></span>
+        <span class="h-3 w-3 bg-green-500 rounded-full mr-1"></span>
+        <span class="h-3 w-3 bg-gray-200 rounded-full mr-1"></span>
+        <span class="h-3 w-3 bg-gray-200 rounded-full mr-1"></span>
+        <span class="h-3 w-3 bg-gray-200 rounded-full"></span>
+      </div>
+      <span class="ml-2 text-sm text-gray-600">Medium</span>
+    </div>
+  </section>
+</div>
+
+</element><element id="8cea1d7f-1ae8-4e9c-8d63-61d5223e7613" data-section-id="8cea1d7f-1ae8-4e9c-8d63-61d5223e7613">
+
+
+<div id="root">
+  <section id="navigation-controls" class="bg-white rounded-lg shadow-sm p-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <!-- Question Navigation Counter -->
+      <div class="flex items-center space-x-3">
+        <button class="p-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <span class="text-gray-700 font-medium">Question 8 of 25</span>
+        <button class="p-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap gap-3 justify-center md:justify-end">
+        <!-- Mark for Review Button -->
+        <button class="px-4 py-2.5 bg-purple-100 text-purple-700 border border-purple-200 rounded-md hover:bg-purple-600 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+          </svg>
+          Mark for Review
+        </button>
+        
+        <!-- Skip Button -->
+        <button class="px-4 py-2.5 bg-red-100 text-red-700 border border-red-200 rounded-md hover:bg-red-600 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+          </svg>
+          Skip
+        </button>
+        
+        <!-- Save & Next Button -->
+        <button class="px-4 py-2.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          Save & Next
+        </button>
+      </div>
+    </div>
+    
+    <!-- Navigation Progress Bar -->
+    <div class="mt-6">
+      <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+        <div class="h-2 bg-indigo-600 rounded-full" style="width: 32%"></div>
+      </div>
+      <div class="flex justify-between mt-2 text-xs text-gray-500">
+        <span>Start</span>
+        <span>Finish</span>
+      </div>
+    </div>
+    
+    <!-- Submit Quiz Button (Fixed at Bottom) -->
+    <div class="mt-8 flex justify-end">
+      <button class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 shadow-sm transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Submit Quiz
+      </button>
+    </div>
+    
+    <!-- Keyboard Shortcuts (Collapsible) -->
+    <div class="mt-6" x-data="{ open: false }">
+      <button 
+        @click="open = !open" 
+        class="flex items-center text-sm text-gray-600 hover:text-indigo-600 transition-colors focus:outline-none"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="h-4 w-4 mr-1 transition-transform duration-200" 
+          :class="{'rotate-90': open}"
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+        Keyboard Shortcuts
+      </button>
+      
+      <div 
+        x-show="open" 
+        x-transition:enter="transition ease-out duration-200" 
+        x-transition:enter-start="opacity-0 -translate-y-2" 
+        x-transition:enter-end="opacity-100 translate-y-0" 
+        x-transition:leave="transition ease-in duration-150" 
+        x-transition:leave-start="opacity-100 translate-y-0" 
+        x-transition:leave-end="opacity-0 -translate-y-2" 
+        class="mt-2 p-3 bg-gray-50 rounded-md text-sm"
+      >
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-2 gap-x-4">
+          <div class="flex items-center">
+            <kbd class="bg-white px-2 py-1 text-xs font-semibold text-gray-800 border border-gray-300 rounded shadow-sm mr-2">←</kbd>
+            <span class="text-gray-700">Previous</span>
+          </div>
+          <div class="flex items-center">
+            <kbd class="bg-white px-2 py-1 text-xs font-semibold text-gray-800 border border-gray-300 rounded shadow-sm mr-2">→</kbd>
+            <span class="text-gray-700">Next</span>
+          </div>
+          <div class="flex items-center">
+            <kbd class="bg-white px-2 py-1 text-xs font-semibold text-gray-800 border border-gray-300 rounded shadow-sm mr-2">M</kbd>
+            <span class="text-gray-700">Mark</span>
+          </div>
+          <div class="flex items-center">
+            <kbd class="bg-white px-2 py-1 text-xs font-semibold text-gray-800 border border-gray-300 rounded shadow-sm mr-2">S</kbd>
+            <span class="text-gray-700">Skip</span>
+          </div>
+          <div class="flex items-center">
+            <kbd class="bg-white px-2 py-1 text-xs font-semibold text-gray-800 border border-gray-300 rounded shadow-sm mr-2">Enter</kbd>
+            <span class="text-gray-700">Save & Next</span>
+          </div>
+          <div class="flex items-center">
+            <kbd class="bg-white px-2 py-1 text-xs font-semibold text-gray-800 border border-gray-300 rounded shadow-sm mr-2">Esc</kbd>
+            <span class="text-gray-700">Close popup</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+</element><element id="e5e42ff1-f5f2-4548-930f-391737b19b55" data-section-id="e5e42ff1-f5f2-4548-930f-391737b19b55">
+
+
+<div id="root">
+  <section id="timer-section" class="bg-white rounded-lg shadow-sm p-4 mb-6">
+    <div class="flex flex-col sm:flex-row justify-between items-center">
+      <!-- Timer Display -->
+      <div class="flex items-center mb-4 sm:mb-0">
+        <div class="bg-red-50 border border-red-100 rounded-lg p-3 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div>
+            <p class="text-xs text-red-500 font-medium">Time Remaining</p>
+            <div class="text-xl font-bold text-red-600" x-data="{ minutes: 45, seconds: 32 }" x-init="setInterval(() => { if (seconds > 0) { seconds--; } else { if (minutes > 0) { minutes--; seconds = 59; } } }, 1000)">
+              <span x-text="minutes.toString().padStart(2, '0')">45</span>:<span x-text="seconds.toString().padStart(2, '0')">32</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Quiz Info Summary -->
+      <div class="flex space-x-3">
+        <div class="px-3 py-2 bg-blue-50 rounded-md flex flex-col items-center">
+          <span class="text-xs text-blue-600 font-medium">Total</span>
+          <span class="text-lg font-bold text-blue-700">25</span>
+        </div>
+        
+        <div class="px-3 py-2 bg-green-50 rounded-md flex flex-col items-center">
+          <span class="text-xs text-green-600 font-medium">Answered</span>
+          <span class="text-lg font-bold text-green-700">7</span>
+        </div>
+        
+        <div class="px-3 py-2 bg-red-50 rounded-md flex flex-col items-center">
+          <span class="text-xs text-red-600 font-medium">Skipped</span>
+          <span class="text-lg font-bold text-red-700">1</span>
+        </div>
+        
+        <div class="px-3 py-2 bg-purple-50 rounded-md flex flex-col items-center">
+          <span class="text-xs text-purple-600 font-medium">Marked</span>
+          <span class="text-lg font-bold text-purple-700">2</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Timer Progress Bar -->
+    <div class="mt-4">
+      <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+        <div class="bg-red-500 h-2 rounded-full" style="width: 62%"></div>
+      </div>
+      <div class="flex justify-between mt-1">
+        <span class="text-xs text-gray-500">Start</span>
+        <span class="text-xs text-gray-500">1 hour 15 minutes total</span>
+        <span class="text-xs text-gray-500">End</span>
+      </div>
+    </div>
+    
+    <!-- Timer Controls -->
+    <div class="mt-4 flex justify-end">
+      <button class="mr-2 inline-flex items-center px-3 py-1.5 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+        Hide Timer
+      </button>
+      
+      <div class="relative" x-data="{ open: false }">
+        <button @click="open = !open" class="inline-flex items-center px-3 py-1.5 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          Options
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        
+        <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+          <div class="py-1" role="none">
+            <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Set Timer Alert</a>
+            <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Pause Timer</a>
+            <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Sound Notification</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Time-based Notification (Conditionally rendered) -->
+    <div class="mt-4 p-3 bg-yellow-50 border border-yellow-100 rounded-md flex items-start" x-data="{ show: true }" x-show="show">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400 mt-0.5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+      </svg>
+      <div class="flex-1">
+        <p class="text-sm text-gray-700">Less than 60% of time remaining. Consider reviewing your answers soon.</p>
+      </div>
+      <button @click="show = false" class="text-gray-400 hover:text-gray-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </section>
+</div>
+
+</element><element id="4a93388c-91d9-47eb-aa89-3ece240a82af" data-section-id="4a93388c-91d9-47eb-aa89-3ece240a82af">
+
+
+<div id="root">
+  <aside id="sidebar-navigation" class="bg-white rounded-lg shadow-sm p-5 h-full">
+    <div class="flex items-center justify-between mb-6">
+      <h3 class="text-lg font-medium text-gray-800">Question Navigator</h3>
+      <button class="text-gray-500 hover:text-gray-700 md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Quiz Stats Summary -->
+    <div class="bg-gray-50 rounded-lg p-3 mb-6">
+      <div class="grid grid-cols-2 gap-3">
+        <div class="flex flex-col">
+          <span class="text-xs text-gray-500">Total Questions</span>
+          <span class="text-lg font-semibold text-gray-800">25</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xs text-gray-500">Attempted</span>
+          <span class="text-lg font-semibold text-green-600">7</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xs text-gray-500">Remaining</span>
+          <span class="text-lg font-semibold text-orange-600">18</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xs text-gray-500">Marked</span>
+          <span class="text-lg font-semibold text-purple-600">2</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Question Filter -->
+    <div class="mb-5">
+      <div class="flex space-x-2 mb-4">
+        <button class="px-3 py-1.5 text-sm bg-indigo-100 text-indigo-700 rounded-md font-medium">All</button>
+        <button class="px-3 py-1.5 text-sm bg-white border border-gray-200 text-gray-700 rounded-md hover:bg-gray-50 transition-colors">Attempted</button>
+        <button class="px-3 py-1.5 text-sm bg-white border border-gray-200 text-gray-700 rounded-md hover:bg-gray-50 transition-colors">Marked</button>
+      </div>
+      <div class="relative">
+        <input type="text" placeholder="Search question number..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+        <div class="absolute left-3 top-2.5 text-gray-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Question Grid -->
+    <div class="grid grid-cols-5 gap-2 mb-6">
+      <button class="w-full py-2 bg-green-100 text-green-800 font-medium rounded hover:bg-green-200 transition-colors flex items-center justify-center">1</button>
+      <button class="w-full py-2 bg-green-100 text-green-800 font-medium rounded hover:bg-green-200 transition-colors flex items-center justify-center">2</button>
+      <button class="w-full py-2 bg-purple-100 text-purple-800 font-medium rounded hover:bg-purple-200 transition-colors flex items-center justify-center">3</button>
+      <button class="w-full py-2 bg-green-100 text-green-800 font-medium rounded hover:bg-green-200 transition-colors flex items-center justify-center">4</button>
+      <button class="w-full py-2 bg-green-100 text-green-800 font-medium rounded hover:bg-green-200 transition-colors flex items-center justify-center">5</button>
+      <button class="w-full py-2 bg-green-100 text-green-800 font-medium rounded hover:bg-green-200 transition-colors flex items-center justify-center">6</button>
+      <button class="w-full py-2 bg-green-100 text-green-800 font-medium rounded hover:bg-green-200 transition-colors flex items-center justify-center">7</button>
+      <button class="w-full py-2 bg-indigo-600 text-white font-medium rounded flex items-center justify-center shadow-sm">8</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">9</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">10</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">11</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">12</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">13</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">14</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">15</button>
+      <button class="w-full py-2 bg-red-100 text-red-800 font-medium rounded hover:bg-red-200 transition-colors flex items-center justify-center">16</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">17</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">18</button>
+      <button class="w-full py-2 bg-purple-100 text-purple-800 font-medium rounded hover:bg-purple-200 transition-colors flex items-center justify-center">19</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">20</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">21</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">22</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">23</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">24</button>
+      <button class="w-full py-2 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200 transition-colors flex items-center justify-center">25</button>
+    </div>
+    
+    <!-- Jump to Section -->
+    <div class="mb-6">
+      <h4 class="text-sm font-medium text-gray-700 mb-2">Jump to Section</h4>
+      <div class="flex flex-wrap gap-2">
+        <button class="px-2.5 py-1.5 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">Science</button>
+        <button class="px-2.5 py-1.5 text-sm bg-gray-100 text-gray-800 rounded-md hover:bg-gray-200 transition-colors">Math</button>
+        <button class="px-2.5 py-1.5 text-sm bg-gray-100 text-gray-800 rounded-md hover:bg-gray-200 transition-colors">Physics</button>
+        <button class="px-2.5 py-1.5 text-sm bg-gray-100 text-gray-800 rounded-md hover:bg-gray-200 transition-colors">Chemistry</button>
+      </div>
+    </div>
+    
+    <!-- Question Status Legend -->
+    <div class="space-y-2.5">
+      <h4 class="text-sm font-medium text-gray-700 mb-2">Status Key</h4>
+      <div class="flex items-center">
+        <div class="w-4 h-4 bg-green-100 rounded mr-2"></div>
+        <span class="text-sm text-gray-700">Answered</span>
+      </div>
+      <div class="flex items-center">
+        <div class="w-4 h-4 bg-indigo-600 rounded mr-2"></div>
+        <span class="text-sm text-gray-700">Current Question</span>
+      </div>
+      <div class="flex items-center">
+        <div class="w-4 h-4 bg-red-100 rounded mr-2"></div>
+        <span class="text-sm text-gray-700">Skipped</span>
+      </div>
+      <div class="flex items-center">
+        <div class="w-4 h-4 bg-purple-100 rounded mr-2"></div>
+        <span class="text-sm text-gray-700">Marked for Review</span>
+      </div>
+      <div class="flex items-center">
+        <div class="w-4 h-4 bg-gray-100 rounded mr-2"></div>
+        <span class="text-sm text-gray-700">Not Visited</span>
+      </div>
+    </div>
+    
+    <!-- Submit Quiz Button -->
+    <div class="mt-8">
+      <button class="w-full py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Submit Quiz
+      </button>
+    </div>
+  </aside>
+</div>
+
+</element><element id="085dd733-eb72-414e-88eb-ad465fbd1956" data-section-id="085dd733-eb72-414e-88eb-ad465fbd1956">
+
+
+<div id="root">
+  <section id="review-panel" class="bg-white rounded-lg shadow-sm p-6 mb-6">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-xl font-semibold text-gray-800">Marked for Review</h2>
+      <button class="text-gray-500 hover:text-gray-700 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    
+    <div class="border-b border-gray-200 mb-4"></div>
+    
+    <!-- Review Items List -->
+    <div class="space-y-4 max-h-[400px] overflow-y-auto pr-2">
+      <!-- Review Item 1 -->
+      <div class="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-500">
+        <div class="flex justify-between mb-2">
+          <div class="flex items-center">
+            <span class="bg-purple-200 text-purple-800 font-medium px-2 py-1 rounded text-sm mr-2">Question 3</span>
+            <span class="text-gray-500 text-sm">Physics</span>
+          </div>
+          <div class="flex space-x-2">
+            <button class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">Go to</button>
+            <button class="text-gray-500 hover:text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <p class="text-gray-800 mb-2">Which of the following is an example of Newton's Third Law of Motion?</p>
+        <div class="flex items-center text-sm text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>
+          <span>Added note: Need to verify the rocket thrust example</span>
+        </div>
+      </div>
+      
+      <!-- Review Item 2 -->
+      <div class="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-500">
+        <div class="flex justify-between mb-2">
+          <div class="flex items-center">
+            <span class="bg-purple-200 text-purple-800 font-medium px-2 py-1 rounded text-sm mr-2">Question 19</span>
+            <span class="text-gray-500 text-sm">Chemistry</span>
+          </div>
+          <div class="flex space-x-2">
+            <button class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">Go to</button>
+            <button class="text-gray-500 hover:text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <p class="text-gray-800 mb-2">Which element has the highest electronegativity in the periodic table?</p>
+        <div class="mt-2 flex items-start space-x-2">
+          <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="text-sm text-gray-600">You selected: <span class="font-medium text-gray-800">Fluorine</span></span>
+        </div>
+      </div>
+      
+      <!-- Empty State (Shown when no items are marked for review) -->
+      <div class="hidden bg-gray-50 rounded-lg p-6 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+        </svg>
+        <h3 class="text-gray-700 font-medium mb-2">No questions marked for review</h3>
+        <p class="text-gray-500 text-sm mb-4">To mark a question for review, click the "Mark for Review" button while viewing a question.</p>
+        <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Return to Quiz
+        </button>
+      </div>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <button class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        </svg>
+        Add Note
+      </button>
+      <button class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+        </svg>
+        Clear All
+      </button>
+    </div>
+    
+    <!-- Filter and Sort (Compact) -->
+    <div class="mt-4 pt-4 border-t border-gray-200">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <label for="sort-review" class="block text-sm font-medium text-gray-700 mr-2">Sort by:</label>
+          <select id="sort-review" class="block w-full pl-3 pr-10 py-1.5 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+            <option>Question Number</option>
+            <option>Recently Added</option>
+            <option>Category</option>
+          </select>
+        </div>
+        
+        <div class="flex items-center text-sm">
+          <span class="text-gray-500 mr-1">Show:</span>
+          <button class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-md text-xs font-medium mr-1">All</button>
+          <button class="bg-gray-100 text-gray-800 px-2 py-1 rounded-md text-xs font-medium mr-1">Answered</button>
+          <button class="bg-gray-100 text-gray-800 px-2 py-1 rounded-md text-xs font-medium">Unanswered</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+</element><element id="79850212-10e9-402d-b60a-da7cf321f2fb" data-section-id="79850212-10e9-402d-b60a-da7cf321f2fb">
+
+
+<div id="root">
+  <section id="results-summary" class="bg-white rounded-lg shadow-sm p-6">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-xl font-semibold text-gray-800">Quiz Results Summary</h2>
+      <div class="flex space-x-2">
+        <button class="text-gray-500 hover:text-gray-700 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+        </button>
+        <button class="text-gray-500 hover:text-gray-700 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Score Overview -->
+    <div class="mb-8">
+      <div class="flex flex-col md:flex-row gap-6">
+        <!-- Score Circle -->
+        <div class="flex-shrink-0 flex items-center justify-center">
+          <div class="w-48 h-48 rounded-full bg-indigo-50 border-8 border-indigo-100 flex flex-col items-center justify-center">
+            <span class="text-4xl font-bold text-indigo-600">76%</span>
+            <span class="text-gray-500 mt-1">19/25 Correct</span>
+          </div>
+        </div>
+        
+        <!-- Score Stats -->
+        <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-green-50 rounded-lg p-4 border border-green-100">
+            <div class="flex items-center">
+              <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-green-600 font-medium">Correct Answers</p>
+                <p class="text-2xl font-bold text-green-700">19</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-red-50 rounded-lg p-4 border border-red-100">
+            <div class="flex items-center">
+              <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-red-600 font-medium">Incorrect Answers</p>
+                <p class="text-2xl font-bold text-red-700">6</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
+            <div class="flex items-center">
+              <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-blue-600 font-medium">Time Taken</p>
+                <p class="text-2xl font-bold text-blue-700">42:18</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-yellow-50 rounded-lg p-4 border border-yellow-100">
+            <div class="flex items-center">
+              <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-yellow-600 font-medium">Percentile</p>
+                <p class="text-2xl font-bold text-yellow-700">82nd</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Performance by Category -->
+    <div class="mb-8">
+      <h3 class="text-lg font-medium text-gray-800 mb-4">Performance by Category</h3>
+      <div class="space-y-4">
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm font-medium text-gray-700">Science</span>
+            <span class="text-sm font-medium text-gray-700">80% (8/10)</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-green-600 h-2.5 rounded-full" style="width: 80%"></div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm font-medium text-gray-700">Physics</span>
+            <span class="text-sm font-medium text-gray-700">70% (7/10)</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 70%"></div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm font-medium text-gray-700">Chemistry</span>
+            <span class="text-sm font-medium text-gray-700">40% (2/5)</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-red-600 h-2.5 rounded-full" style="width: 40%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Question Review Summary -->
+    <div class="mb-8">
+      <h3 class="text-lg font-medium text-gray-800 mb-4">Question Analysis</h3>
+      <div class="bg-gray-50 rounded-lg p-4 overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead>
+            <tr>
+              <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Question
+              </th>
+              <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Your Answer
+              </th>
+              <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Correct Answer
+              </th>
+              <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Result
+              </th>
+              <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Time Spent
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <tr>
+              <td class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900">Q1</td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">B</td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">B</td>
+              <td class="px-4 py-2 whitespace-nowrap">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  Correct
+                </span>
+              </td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">1:20</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900">Q2</td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">A</td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">C</td>
+              <td class="px-4 py-2 whitespace-nowrap">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                  Wrong
+                </span>
+              </td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">2:05</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900">Q3</td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">D</td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">D</td>
+              <td class="px-4 py-2 whitespace-nowrap">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  Correct
+                </span>
+              </td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">1:45</td>
+            </tr>
+            <!-- Show more button -->
+            <tr>
+              <td colspan="5" class="px-4 py-3 text-center">
+                <button class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                  View All Questions
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="flex flex-wrap gap-4">
+      <button class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+        </svg>
+        View Detailed Report
+      </button>
+      
+      <button class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+        Retry Quiz
+      </button>
+      
+      <button class="px-6 py-3 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-7-7v14" />
+        </svg>
+        Share Results
+      </button>
+      
+      <button class="px-6 py-3 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+        </svg>
+        Back to Dashboard
+      </button>
+    </div>
+  </section>
+</div>
+
+</element><element id="26f0d06a-8622-4ed3-94dc-b537acc1da29" data-section-id="26f0d06a-8622-4ed3-94dc-b537acc1da29">
+
+
+<div id="root">
+  <footer id="footer" class="bg-white border-t border-gray-200 py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div class="flex items-center mb-6 md:mb-0">
+          <img src="https://placehold.co/40x40?text=Quiz" alt="Quiz Portal Logo" class="h-10 w-10 mr-2" />
+          <span class="text-xl font-semibold text-indigo-700">Quiz Portal 2024-25</span>
+        </div>
+        
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-gray-800 font-semibold mb-4">About Us</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Company</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Team</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Careers</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-gray-800 font-semibold mb-4">Resources</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Study Materials</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Practice Tests</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Video Tutorials</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Academic Calendar</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-gray-800 font-semibold mb-4">Support</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Help Center</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Contact Us</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">FAQs</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Technical Support</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-gray-800 font-semibold mb-4">Subscribe</h3>
+          <p class="text-gray-600 mb-4">Stay updated with our latest quizzes and educational content.</p>
+          <div class="flex">
+            <input type="email" placeholder="Your email" class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent flex-1" />
+            <button class="bg-indigo-600 text-white px-4 py-2 rounded-r-md hover:bg-indigo-700 transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center">
+        <div class="text-gray-500 text-sm mb-4 md:mb-0">
+          &copy; 2024 Quiz Portal. All rights reserved.
+        </div>
+        
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-500 hover:text-indigo-600 text-sm transition-colors">Privacy Policy</a>
+          <a href="#" class="text-gray-500 hover:text-indigo-600 text-sm transition-colors">Terms of Service</a>
+          <a href="#" class="text-gray-500 hover:text-indigo-600 text-sm transition-colors">Cookie Policy</a>
+          <a href="#" class="text-gray-500 hover:text-indigo-600 text-sm transition-colors">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</element></div>
+      </main>
+
+      
+   </body>
+</html>

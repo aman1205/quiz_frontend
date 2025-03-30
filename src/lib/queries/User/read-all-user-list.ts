@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { apiAuth } from "@/lib/axios";
 import {UserFindAllRoute } from "@/lib/api-routes";
 
-export const getAllUser = () => {
+export const useGetAllUser = () => {
 	return useQuery({
 		queryKey: ["userfindall"],
 		queryFn: async () => {

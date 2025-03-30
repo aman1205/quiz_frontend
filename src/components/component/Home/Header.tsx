@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Header = () => {
@@ -40,48 +41,48 @@ const Header = () => {
 
           {/* <!-- Desktop Menu --> */}
           <div className="hidden md:flex space-x-8 items-center font-['Inter']">
-            <a
+            <Link
               href="/"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               About
-            </a>
-            <a
+            </Link>
+            <Link
               href="/domains"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               Domains
-            </a>
-            <a
+            </Link>
+            <Link
               href="/team"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               Team
-            </a>
-            <a
+            </Link>
+            <Link
               href="/quiz"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               Quiz
-            </a>
-            <a
+            </Link>
+            <Link
               href="/events"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               Events
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -91,48 +92,48 @@ const Header = () => {
           className="hidden md:hidden mt-4 animate__animated animate__fadeIn"
         >
           <div className="flex flex-col space-y-4 font-['Inter']">
-            <a
+            <Link
               href="/"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               About
-            </a>
-            <a
+            </Link>
+            <Link
               href="/domains"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               Domains
-            </a>
-            <a
+            </Link>
+            <Link
               href="/team"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               Team
-            </a>
-            <a
+            </Link>
+            <Link
               href="/quiz"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               Quiz
-            </a>
-            <a
+            </Link>
+            <Link
               href="/events"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               Events
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="hover:text-[#64FFDA] transition-colors duration-300"
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

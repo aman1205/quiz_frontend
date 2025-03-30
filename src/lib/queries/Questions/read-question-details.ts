@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { apiAuth } from "@/lib/axios";
 import {QuestionRoute} from '../../api-routes'
 
-export const getQuestionDetails = (id: string) => {
+export const useGetQuestionDetails = (id: string) => {
   return useQuery({
     queryKey: ["question-details", id], 
     queryFn: async () => {

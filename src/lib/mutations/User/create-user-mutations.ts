@@ -7,7 +7,7 @@ interface IUser {
   email: string;
   role: 'user' | 'admin';
 }
-export const usecreateUser = () => {
+export const useCreateUser = () => {
   const createUser = async (user: IUser) => {
     const response = await apiAuth.post(UserCreateRoute, user);
     return response.data;
