@@ -3,14 +3,14 @@ import PageContainer from "@/components/layout/page-container";
 import { buttonVariants } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
-import { getAllQuestion } from "@/lib/queries/Questions/read-question-list";
+import { useGetAllQuestion } from "@/lib/queries/Questions/read-question-list";
 import { cn } from "@/lib/utils";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import QuestionsTable from "./questions-tables";
 
 const QuestionListingPage = () => {
-  const { data, isLoading } = getAllQuestion();
+  const { data, isLoading } = useGetAllQuestion();
   const questionCount = data?.data?.length ?? 0;
 
   console.log("Data for the questions00 " , data)

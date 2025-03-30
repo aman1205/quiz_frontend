@@ -7,10 +7,10 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import EmployeeTable from "./users-tables";
-import { getAllUser } from "@/lib/queries/User/read-all-user-list";
+import { useGetAllUser } from "@/lib/queries/User/read-all-user-list";
 
 const UsersListPage = () => {
-  const { data, isLoading } = getAllUser();
+  const { data, isLoading } = useGetAllUser();
   const userCount = data?.data?.length ?? 0;
 
 

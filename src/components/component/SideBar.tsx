@@ -185,7 +185,7 @@ function PlusIcon(props:any) {
 }
 
 
-function UsersIcon(props:AnyMxRecord) {
+function UsersIcon(props:any) {
   return (
     <svg
       {...props}

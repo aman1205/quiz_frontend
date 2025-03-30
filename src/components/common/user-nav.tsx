@@ -14,7 +14,6 @@ import {
 import { signOut, useSession } from "next-auth/react";
 export function UserNav() {
   const { data: session } = useSession();
-  console.log(session?.user?.user.name, "nweigulrkgbkgfbkugbu");
   if (session) {
     return (
       <DropdownMenu>
@@ -25,7 +24,7 @@ export function UserNav() {
                 src={session.user?.name ?? ""}
                 alt={session.user?.name ?? ""}
               />
-              <AvatarFallback>{session?.user?.user.name?.[0]}</AvatarFallback>
+              <AvatarFallback>{session?.user?.name?.[0]}</AvatarFallback>
             </Avatar>
           </Button>
         </DropdownMenuTrigger>

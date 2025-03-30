@@ -1,10 +1,10 @@
 "use client";
-import { usecreateUser } from "@/lib/mutations/User/create-user-mutations";
+import { useCreateUser } from "@/lib/mutations/User/create-user-mutations";
 import EmployeeForm from "../_components/users-form";
 import toast from "react-hot-toast";
 
 const NewUserPage = () => {
-  const { mutate: createUserMutation } = usecreateUser();
+  const { mutate: createUserMutation } = useCreateUser();
 
   const handleSubmit = (values: any) => {
     createUserMutation(values, {

@@ -10,7 +10,7 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
-import { getQuiz } from "@/lib/queries/Quiz/read-quiz";
+import { useGetQuiz } from "@/lib/queries/Quiz/read-quiz";
 import PageLoader from "@/components/PageLoader";
 import NoDataScreen from '@/components/common/NoDataScreen';
 
@@ -19,7 +19,7 @@ const Main = () => {
   const {
     data: quizData,
     isLoading: isQuizLoading,
-  } = getQuiz();
+  } = useGetQuiz();
 
   const questions = quizData?.data?.[0]?.questions || [];
 

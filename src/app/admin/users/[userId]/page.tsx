@@ -1,7 +1,7 @@
 "use client";
 import { useParams } from "next/navigation";
 
-import { getUserDetails } from "@/lib/queries/User/read-user-details";
+import { useGetUserDetails } from "@/lib/queries/User/read-user-details";
 import { useUpdateUser } from "@/lib/mutations/User/update-user-mutations";
 
 import EmployeeForm from "../_components/users-form";
@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 
 const EditUserPage = () => {
   const { userId } = useParams();
-  const { data, isLoading } = getUserDetails(userId as string);
+  const { data, isLoading } = useGetUserDetails(userId as string);
   const { mutate: updateUser } = useUpdateUser();
 
   const handleUpdate = (values: any) => {

@@ -1,12 +1,12 @@
 "use client"
 import { useParams } from "next/navigation";
 import QuestionForm from "../_component/question-form";
-import { getQuestionDetails } from "@/lib/queries/Questions/read-question-details";
+import { useGetQuestionDetails } from "@/lib/queries/Questions/read-question-details";
 import { useUpdateQuestion } from "@/lib/mutations/Questions/update-question-mutation";
 import toast from "react-hot-toast";
 const EditQuestion = (value: any) => {
   const { questionId } = useParams();
-  const { data, isLoading } = getQuestionDetails(questionId as string);
+  const { data, isLoading } = useGetQuestionDetails(questionId as string);
   const { mutate } = useUpdateQuestion();
 
   const handleUpdate = (values: any) => {

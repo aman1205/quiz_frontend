@@ -12,8 +12,7 @@ const FileUploadForm = () => {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0] || null;
     setSelectedFile(file);
-    // Update form value directly
-    form.setValue("file", file); // Assuming "file" is the name of the field in useForm
+    // form.setValue("imageUrl", file);   //TODO: Uncomment this line if you want to set the file in the form state
   };
 
   const handleFileUpload = async () => {
@@ -49,7 +48,7 @@ const FileUploadForm = () => {
           <div className="grid gap-2">
             <FormField
               control={form.control}
-              name="file"
+              name="imageUrl"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-center">Choose file to upload</FormLabel>

@@ -21,13 +21,13 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Questions } from "@/constants/data";
-import { getAllCategory } from "@/lib/queries/Questions/read-category-list";
+import { useGetAllCategory } from "@/lib/queries/Questions/read-category-list";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Cloud } from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-const formSchema = z.object({
+export const quizFormSchema = z.object({
   image_url: z.string().min(10, "Image is required"),
   text: z.string().min(2, {
     message: "Product name must be at least 2 characters.",
@@ -40,8 +40,8 @@ const formSchema = z.object({
 });
 
 interface IQuestionFormProps {
-  initialValues?: z.infer<typeof formSchema>;
-  onSubmit?: (values: z.infer<typeof formSchema>) => void;
+  initialValues?: z.infer<typeof quizFormSchema>;
+  onSubmit?: (values: z.infer<typeof quizFormSchema>) => void;
   isLoading?: boolean;
 }
 
@@ -51,9 +51,9 @@ export default function QuestionForm({
   isLoading,
 }: IQuestionFormProps) {
   const { data: CATEGORY_OPTIONS, isLoading: CategoryLoading } =
-    getAllCategory();
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+    useGetAllCategory();
+  const form = useForm<z.infer<typeof quizFormSchema>>({
+    resolver: zodResolver(quizFormSchema),
     values: initialValues || {
       text: "",
       category: "",
@@ -62,6 +62,8 @@ export default function QuestionForm({
       options: [""],
     },
   });
+
+  const handleSubmit = onSubmit || ((values) => console.log("Form submitted:", values));
 
   return (
     <Card className="mx-auto w-full">
@@ -72,7 +74,7 @@ export default function QuestionForm({
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8">
             <FormField
               control={form.control}
               name="image_url"
@@ -82,7 +84,7 @@ export default function QuestionForm({
                     <FormLabel>Images</FormLabel>
                     <FormControl>
                       <FileUploader
-                        onUploadSuccess={(url) => field.onChange(url)}
+                        onUploadSuccess={(url:string) => field.onChange(url)}
                       />
                     </FormControl>
                     <FormMessage />

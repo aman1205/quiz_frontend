@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Edit, MoreHorizontal, Trash } from 'lucide-react';
 
-import { deleteUserById } from '@/lib/mutations/User/delete-user-mutations';
+import { useDeleteUserById } from '@/lib/mutations/User/delete-user-mutations';
 
 import { AlertModal } from '@/components/modal/alert-modal';
 import { Button } from '@/components/ui/button';
@@ -26,7 +26,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  const { mutate: deleteUser } = deleteUserById();
+  const { mutate: deleteUser } = useDeleteUserById();
 
 
   const onConfirm = async () => {

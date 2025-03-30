@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import MainHeder from "@/components/component/Quiz/MainHeder";
 import { QuizCard } from "@/components/component/Quiz/QuizCard";
 import PageContainer from "@/components/layout/page-container";
-import { getQuiz } from "@/lib/queries/Quiz/read-quiz";
+import { useGetQuiz } from "@/lib/queries/Quiz/read-quiz";
 import { Quiz } from "@/lib/Types/interface";
 
 const Page = () => {
-  const { data,isLoading } = getQuiz();
+  const { data,isLoading } = useGetQuiz();
   console.log(data);
 
   return (

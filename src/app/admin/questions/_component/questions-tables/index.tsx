@@ -9,7 +9,7 @@ import {
 import { columns } from "./columns";
 import { DataTable as QuestionTable } from "@/components/ui/table/data-table";
 import { Questions } from "@/constants/data";
-import { getAllCategory } from "@/lib/queries/Questions/read-category-list";
+import { useGetAllCategory } from "@/lib/queries/Questions/read-category-list";
 
 export default function QuestionsTableAction({
   data,
@@ -27,7 +27,7 @@ export default function QuestionsTableAction({
     setPage,
     setSearchQuery,
   } = useProductTableFilters();
-  const {data:CATEGORY_OPTIONS , isLoading} =getAllCategory();
+  const {data:CATEGORY_OPTIONS , isLoading} =useGetAllCategory();
 
   return (
     <div className="space-y-4">

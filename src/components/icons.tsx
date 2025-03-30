@@ -27,8 +27,8 @@ import {
     Trash,
     Twitter,
     User,
+    UserX,
     UserCircle2Icon,
-    UserPen,
     UserX2Icon,
     X
   } from 'lucide-react';
@@ -49,7 +49,7 @@ import {
     employee: UserX2Icon,
     post: FileText,
     page: File,
-    userPen: UserPen,
+    userPen: UserX,
     user2: UserCircle2Icon,
     media: Image,
     settings: Settings,
